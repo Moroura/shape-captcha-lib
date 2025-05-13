@@ -206,7 +206,8 @@ class YourAppRegistrationForm(BaseModel): # Replace with your actual model name
 #     # ... rest of your user registration logic ...
 #     return {"message": "User registered successfully"}
 ```
-How It Works (CAPTCHA Mechanism)
+**How It Works (CAPTCHA Mechanism)**
+
 The client application requests a new CAPTCHA challenge from the API (GET /api/captcha/new-challenge).
 The server (using CaptchaChallengeService):
 Generates a unique captcha_id.
