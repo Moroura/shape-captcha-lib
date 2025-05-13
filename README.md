@@ -1,5 +1,3 @@
-# shape-captcha-lib
-Python library for a "click-the-shape" CAPTCHA. Server-side challenge generation and verification for web apps.
 # Shape CAPTCHA Library
 
 A custom server-side CAPTCHA for Python web applications (with examples for FastAPI). It challenges users to identify one of several geometric shapes in a generated image. This is a fully server-side implementation with no dependencies on third-party CAPTCHA services.
