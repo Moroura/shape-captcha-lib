@@ -209,19 +209,30 @@ class YourAppRegistrationForm(BaseModel): # Replace with your actual model name
 **How It Works (CAPTCHA Mechanism)**
 
 The client application requests a new CAPTCHA challenge from the API (GET /api/captcha/new-challenge).
+
 The server (using CaptchaChallengeService):
 Generates a unique captcha_id.
+
 Creates an image with ~10 different geometric shapes (unique types, colors, random sizes, and positions).
+
 Selects one of the shapes/types as the "target" for the user.
+
 Stores information about the target shape and the parameters of all shapes in the image in Redis with a short time-to-live (TTL).
 Returns the captcha_id, the image (as a base64 string), and a prompt (e.g., "Click on the square") to the client.
+
 The client application displays the image and the prompt. The user clicks on a shape. Client-side JavaScript determines the click coordinates (x, y) relative to the image.
+
 When submitting the main form (e.g., registration), the client sends the captcha_id, captcha_click_x, and captcha_click_y along with other data.
+
 The server-side endpoint (e.g., registration):
+
 Calls captcha_service.verify_solution() with the received captcha_id and click coordinates.
+
 The service retrieves the stored challenge data from Redis, verifies if the click falls within the target shape (using precise geometry), and then deletes the entry from Redis.
+
 If verification fails, an error is returned. Otherwise, processing of the main request continues.
 Running Tests (for library developers)
+
 To test the shape-captcha-lib library itself:
 
 ```Bash
