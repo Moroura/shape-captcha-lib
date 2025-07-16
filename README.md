@@ -38,6 +38,70 @@ In the future (after publishing to PyPI):
 ```Bash
 pip install shape-captcha-lib
 ```
+
+## Configuration
+The library's behavior can be customized by defining the following variables in your application's configuration file (e.g., config.py).
+
+Core Image & Shape Parameters
+CAPTCHA_IMAGE_WIDTH
+The final width in pixels of the generated CAPTCHA image. Default: 400.
+
+CAPTCHA_IMAGE_HEIGHT
+The final height in pixels of the generated CAPTCHA image. Default: 250.
+
+CAPTCHA_UPSCALE_FACTOR
+An upscaling factor used during the drawing process to produce smoother, anti-aliased shapes. A higher value results in better quality but uses more memory. Default: 3.
+
+CAPTCHA_NUM_SHAPES
+The total number of shapes to draw on the CAPTCHA image. Default: 10.
+
+CAPTCHA_TARGET_MIN_FINAL_SHAPE_DIM
+The minimum size (width or height) in pixels for any shape on the final rendered image. Default: 30.
+
+CAPTCHA_TARGET_MAX_FINAL_SHAPE_DIM
+The maximum size (width or height) in pixels for any shape on the final rendered image. Default: 50.
+
+Visual Noise Parameters
+CAPTCHA_ADD_WATERMARK_TEXT
+A boolean (True/False) to enable or disable drawing text watermarks over the image.
+
+CAPTCHA_WATERMARK_TEXT
+The text to use for the watermark. If set to None, a random string will be generated for each CAPTCHA.
+
+CAPTCHA_NUM_WATERMARK_LINES
+The number of watermark text lines to draw across the image.
+
+CAPTCHA_WATERMARK_FONT_PATH
+An absolute path to a .ttf font file for the watermark text. If None, a default Pillow font is used.
+
+CAPTCHA_WATERMARK_OPACITY
+The opacity of the watermark text, from 0 (transparent) to 255 (fully opaque).
+
+CAPTCHA_ADD_NOISE_LINES
+A boolean (True/False) to enable or disable drawing random noise lines over the image.
+
+CAPTCHA_NUM_NOISE_LINES
+The number of noise lines to draw.
+
+CAPTCHA_ADD_POINT_NOISE
+A boolean (True/False) to enable or disable adding point noise (a "salt-and-pepper" effect) to the image.
+
+CAPTCHA_POINT_NOISE_DENSITY
+The density of the point noise, as a fraction of total pixels (e.g., 0.02 for 2%).
+
+Localization Settings
+CAPTCHA_DEFAULT_LANGUAGE
+The default language for challenge prompts (e.g., "Click on the square"). Supported values depend on the implemented localization files. Default: 'ru'.
+
+Redis & Challenge Settings
+CAPTCHA_REDIS_KEY_PREFIX
+The prefix for all CAPTCHA-related keys stored in Redis. This helps avoid key collisions if you use the same Redis database for other purposes.
+
+CAPTCHA_TTL_SECONDS
+The time-to-live (TTL) in seconds for a CAPTCHA challenge. After this time, the challenge data is automatically deleted from Redis, and it can no longer be solved. Default: 300.
+
+
+
 Quick Start & Usage (FastAPI Example)
 Below is a conceptual example of how to integrate the library into your FastAPI application.
 
