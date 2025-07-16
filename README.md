@@ -40,7 +40,8 @@ pip install shape-captcha-lib
 ```
 
 ## Configuration
-The library's behavior can be customized by defining the following variables in your application's configuration file (e.g., config.py).
+The library's behavior can be customized by defining the following variables in your application's 
+configuration file (e.g., config.py).
 ```Python
 ** Core Image & Shape Parameters
 CAPTCHA_IMAGE_WIDTH
@@ -50,7 +51,8 @@ CAPTCHA_IMAGE_HEIGHT
 The final height in pixels of the generated CAPTCHA image. Default: 250.
 
 CAPTCHA_UPSCALE_FACTOR
-An upscaling factor used during the drawing process to produce smoother, anti-aliased shapes. A higher value results in better quality but uses more memory. Default: 3.
+An upscaling factor used during the drawing process to produce smoother, anti-aliased shapes.
+A higher value results in better quality but uses more memory. Default: 3.
 
 CAPTCHA_NUM_SHAPES
 The total number of shapes to draw on the CAPTCHA image. Default: 10.
@@ -91,14 +93,17 @@ The density of the point noise, as a fraction of total pixels (e.g., 0.02 for 2%
 
 ** Localization Settings
 CAPTCHA_DEFAULT_LANGUAGE
-The default language for challenge prompts (e.g., "Click on the square"). Supported values depend on the implemented localization files. Default: 'ru'.
+The default language for challenge prompts (e.g., "Click on the square"). Supported values depend on the
+implemented localization files. Default: 'en'.
 
 ** Redis & Challenge Settings
 CAPTCHA_REDIS_KEY_PREFIX
-The prefix for all CAPTCHA-related keys stored in Redis. This helps avoid key collisions if you use the same Redis database for other purposes.
+The prefix for all CAPTCHA-related keys stored in Redis. This helps avoid key collisions if you use the
+same Redis database for other purposes.
 
 CAPTCHA_TTL_SECONDS
-The time-to-live (TTL) in seconds for a CAPTCHA challenge. After this time, the challenge data is automatically deleted from Redis, and it can no longer be solved. Default: 300.
+The time-to-live (TTL) in seconds for a CAPTCHA challenge. After this time, the challenge data is
+automatically deleted from Redis, and it can no longer be solved. Default: 300.
 ```
 
 
