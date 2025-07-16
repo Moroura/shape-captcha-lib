@@ -1,4 +1,4 @@
-# Russian translations for shape_captcha_lib
+# Hindi translations for shape_captcha_lib
 # Copyright (C) 2025 Roman Stalin (Moroura)
 # This file is distributed under the same license as the shape_captcha_lib package.
 # Roman Stalin (Moroura) <stalkersocialclub@gmail.com>, 2025.
@@ -10,77 +10,77 @@ msgstr ""
 "POT-Creation-Date: 2025-05-20 20:00+0300\n"
 "PO-Revision-Date: 2025-07-16 11:42+0300\n"
 "Last-Translator: Roman Stalin (Moroura) <stalkersocialclub@gmail.com>\n"
-"Language-Team: Russian <stalkersocialclub@gmail.com>\n"
-"Language: ru\n"
+"Language-Team: Hindi <stalkersocialclub@gmail.com>\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Please click on a shape of type: %s"
-msgstr "Пожалуйста, нажмите на фигуру типа: %s"
+msgstr "कृपया इस प्रकार की आकृति पर क्लिक करें: %s"
 
 # 2D Shapes
 msgid "circle"
-msgstr "круг"
+msgstr "वृत्त"
 
 msgid "square"
-msgstr "квадрат"
+msgstr "वर्ग"
 
 msgid "rectangle"
-msgstr "прямоугольник"
+msgstr "आयत"
 
 msgid "equilateral_triangle"
-msgstr "равносторонний треугольник"
+msgstr "समबाहु त्रिभुज"
 
 msgid "pentagon"
-msgstr "пятиугольник"
+msgstr "पंचकोण"
 
 msgid "hexagon"
-msgstr "шестиугольник"
+msgstr "षट्कोण"
 
 msgid "star5"
-msgstr "5-конечная звезда"
+msgstr "5-बिंदुओं वाला तारा"
 
 msgid "rhombus"
-msgstr "ромб"
+msgstr "विषमकोण"
 
 msgid "trapezoid"
-msgstr "трапеция"
+msgstr "समलम्ब"
 
 msgid "cross"
-msgstr "крест"
+msgstr "क्रॉस"
 
 # 3D Shapes
 msgid "sphere"
-msgstr "сфера"
+msgstr "गोला"
 
 msgid "cube"
-msgstr "куб"
+msgstr "घन"
 
 msgid "cylinder"
-msgstr "цилиндр"
+msgstr "बेलन"
 
 msgid "cone"
-msgstr "конус"
+msgstr "शंकु"
 
 msgid "pyramid"
-msgstr "пирамида"
+msgstr "पिरामिड"
 
 msgid "cuboid"
-msgstr "параллелепипед"
+msgstr "घनाभ"
 
 msgid "octahedron"
-msgstr "октаэдр"
+msgstr "अष्टफलक"
 
 msgid "torus"
-msgstr "тор"
+msgstr "टोरस"
 
 msgid "cross_3d"
-msgstr "3D крест"
+msgstr "3D क्रॉस"
 
 msgid "star5_3d"
-msgstr "3D 5-конечная звезда"
+msgstr "3D 5-बिंदुओं वाला तारा"
 
 msgid "arrow"
-msgstr "стрелка"
+msgstr "तीर"

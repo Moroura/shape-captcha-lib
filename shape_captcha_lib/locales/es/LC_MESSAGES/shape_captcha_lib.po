@@ -1,4 +1,4 @@
-# Russian translations for shape_captcha_lib
+# Spanish translations for shape_captcha_lib
 # Copyright (C) 2025 Roman Stalin (Moroura)
 # This file is distributed under the same license as the shape_captcha_lib package.
 # Roman Stalin (Moroura) <stalkersocialclub@gmail.com>, 2025.
@@ -10,77 +10,77 @@ msgstr ""
 "POT-Creation-Date: 2025-05-20 20:00+0300\n"
 "PO-Revision-Date: 2025-07-16 11:42+0300\n"
 "Last-Translator: Roman Stalin (Moroura) <stalkersocialclub@gmail.com>\n"
-"Language-Team: Russian <stalkersocialclub@gmail.com>\n"
-"Language: ru\n"
+"Language-Team: Spanish <stalkersocialclub@gmail.com>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Please click on a shape of type: %s"
-msgstr "Пожалуйста, нажмите на фигуру типа: %s"
+msgstr "Por favor, haga clic en una forma de tipo: %s"
 
 # 2D Shapes
 msgid "circle"
-msgstr "круг"
+msgstr "círculo"
 
 msgid "square"
-msgstr "квадрат"
+msgstr "cuadrado"
 
 msgid "rectangle"
-msgstr "прямоугольник"
+msgstr "rectángulo"
 
 msgid "equilateral_triangle"
-msgstr "равносторонний треугольник"
+msgstr "triángulo equilátero"
 
 msgid "pentagon"
-msgstr "пятиугольник"
+msgstr "pentágono"
 
 msgid "hexagon"
-msgstr "шестиугольник"
+msgstr "hexágono"
 
 msgid "star5"
-msgstr "5-конечная звезда"
+msgstr "estrella de 5 puntas"
 
 msgid "rhombus"
-msgstr "ромб"
+msgstr "rombo"
 
 msgid "trapezoid"
-msgstr "трапеция"
+msgstr "trapecio"
 
 msgid "cross"
-msgstr "крест"
+msgstr "cruz"
 
 # 3D Shapes
 msgid "sphere"
-msgstr "сфера"
+msgstr "esfera"
 
 msgid "cube"
-msgstr "куб"
+msgstr "cubo"
 
 msgid "cylinder"
-msgstr "цилиндр"
+msgstr "cilindro"
 
 msgid "cone"
-msgstr "конус"
+msgstr "cono"
 
 msgid "pyramid"
-msgstr "пирамида"
+msgstr "pirámide"
 
 msgid "cuboid"
-msgstr "параллелепипед"
+msgstr "cuboide"
 
 msgid "octahedron"
-msgstr "октаэдр"
+msgstr "octaedro"
 
 msgid "torus"
-msgstr "тор"
+msgstr "toro"
 
 msgid "cross_3d"
-msgstr "3D крест"
+msgstr "cruz 3D"
 
 msgid "star5_3d"
-msgstr "3D 5-конечная звезда"
+msgstr "estrella 3D de 5 puntas"
 
 msgid "arrow"
-msgstr "стрелка"
+msgstr "flecha"
