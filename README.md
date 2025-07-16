@@ -105,7 +105,7 @@ The time-to-live (TTL) in seconds for a CAPTCHA challenge. After this time, the 
 Quick Start & Usage (FastAPI Example)
 Below is a conceptual example of how to integrate the library into your FastAPI application.
 
-1. Initialize CaptchaChallengeService:
+## 1. Initialize CaptchaChallengeService:
 
 The service manages the CAPTCHA logic. It needs to be initialized with a Redis client.
 
