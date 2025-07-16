@@ -1,0 +1,144 @@
+[build-system]
+requires = ["setuptools>=80.7.1", "wheel"] # Ваша версия 80.7.1 подходит
+build-backend = "setuptools.build_meta"
+# backend-path = ["."] # Можно оставить, если setuptools находится в корне
+
+[project]
+name = "shape-captcha-lib"
+version = "0.2.0"  # <--- ПРЕДЛОЖЕНИЕ: Обновить версию
+description = "Custom server-side geometric shape CAPTCHA generator library for Python/FastAPI."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+
+authors = [
+    { name = "Remus Ardent Phenreer", email = "Remus.Ardent.Phenreer@gmail.com" }
+]
+maintainers = [
+    { name = "Remus Ardent Phenreer", email = "Remus.Ardent.Phenreer@gmail.com" }
+]
+
+keywords = ["captcha", "security", "image-captcha", "fastapi", "pillow", "redis", "geometric-shapes", "i18n", "async", "sync"] # <--- Добавил пару ключевых слов
+
+classifiers = [
+    "Development Status :: 4 - Beta", # <--- ПРЕДЛОЖЕНИЕ: Можно изменить на Beta после рефакторинга
+    "Intended Audience :: Developers",
+    "Topic :: Security",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Topic :: Multimedia :: Graphics :: Capture :: Screen Capture", # Graphics более общее
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: OS Independent",
+    "Framework :: FastAPI", # Если поддерживаете и другие, можно добавить или убрать
+    "Framework :: Flask",  # Если будете предоставлять примеры/поддержку
+    "Natural Language :: English",
+    "Natural Language :: Russian" # Добавлено, так как есть поддержка русского
+]
+
+dependencies = [
+    "Pillow>=9.0.0" 
+    # redis и aiofiles перенесены в optional-dependencies
+]
+
+[project.optional-dependencies]
+redis = ["redis[asyncio]>=4.0.0"]  # Для RedisStore (sync и async)
+aiofiles = ["aiofiles>=0.7.0"]    # Для AsyncJsonFileStore
+
+# Группа для установки всех зависимостей хранилищ сразу
+all_stores = [
+    "shape-captcha-lib[redis]",
+    "shape-captcha-lib[aiofiles]"
+]
+
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio",
+    "black>=23.0.0",
+    "isort>=5.0.0",
+    "ruff>=0.1.0", 
+    "mypy>=1.0.0",
+    "pre-commit",
+    # Добавляем зависимости для тестов, если они используют все хранилища
+    "shape-captcha-lib[all_stores]" 
+]
+docs = [
+    "Sphinx>=5.0.0",
+    "sphinx-rtd-theme>=1.0.0",
+    "myst-parser", # Для Markdown в Sphinx
+    # "sphinx-intl", # Для сборки локализованной документации, если потребуется
+]
+
+[project.urls]
+Homepage = "https://github.com/Moroura/shape-captcha-lib" 
+Repository = "https://github.com/Moroura/shape-captcha-lib"
+"Bug Tracker" = "https://github.com/Moroura/shape-captcha-lib/issues"
+
+# --- Конфигурация Setuptools ---
+[tool.setuptools]
+# Автоматический поиск пакетов (если ваш главный пакет shape_captcha_lib лежит в корне)
+# Если структура src/shape_captcha_lib, то where = ["src"]
+[tool.setuptools.packages.find]
+where = ["."]  # Указывает, что пакеты искать в текущей директории
+include = ["shape_captcha_lib*"] # Включает shape_captcha_lib и его подпакеты
+exclude = ["tests*"] # Исключает директорию tests из пакетов
+
+# --- Включение файлов данных ---
+[tool.setuptools.package-data]
+"shape_captcha_lib" = [  # Имя вашего пакета
+    # Шрифты (предполагая, что они в shape_captcha_lib/assets/fonts/)
+    "fonts/*.ttf",
+    "fonts/*.otf", # Если будете использовать и .otf шрифты
+
+    # Скомпилированные файлы локализации
+    "locales/*/*/*.mo",
+    # "locales/*/*/*.po", # Опционально: включать .po для source distributions (sdist)
+
+    # Файлы палитр для моделей
+    "shapes/*/_palette.py", # Если _palette.py прямо в model_dir (например, shapes/base_model/_palette.py)
+    # Если структура может быть глубже, например, shapes/model_group/actual_model/_palette.py,
+    # то шаблон нужно будет скорректировать или добавить еще один:
+    # "shapes/*/*/_palette.py" 
+]
+
+# --- Остальные ваши настройки инструментов (pytest, black, isort, ruff, mypy) ---
+# Они выглядят хорошо и соответствуют современным практикам.
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+# asyncio_mode = "auto" # Для pytest-asyncio, если еще не настроено глобально
+
+[tool.black]
+line-length = 119 # Вы указали 88, но чтобы не было конфликта с Ruff, который ниже тоже 119, или наоборот
+target-version = ['py39', 'py310', 'py311', 'py312', 'py313']
+
+[tool.isort]
+profile = "black"
+line_length = 119 # Согласовать с black и ruff
+
+[tool.ruff]
+line-length = 119 # Согласовать с black и isort
+# select и ignore остаются вашими
+select = ["E", "F", "W", "I", "UP", "ANN", "ASYNC", "BUG", "C4", "ERA", "N", "PIE", "PTH", "Q", "RET", "RUF", "SIM", "TID", "TCH", "YTT"]
+ignore = ["E501"] # E501 - это line too long, если line-length настроен, это должно обрабатываться им
+
+[tool.ruff.lint.per-file-ignores] # ruff >= 0.1.0 использует lint.per-file-ignores
+"__init__.py" = ["F401", "E402"] # F401 - unused import, E402 - module level import not at top of file (если есть код до импортов)
+
+[tool.mypy]
+python_version = "3.9" # Минимальная поддерживаемая версия
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true # Оставляем, если есть внешние зависимости без stubs
+# Для более строгой проверки можно установить:
+# disallow_untyped_defs = true
+# disallow_incomplete_defs = true
+# check_untyped_defs = true
+# no_implicit_optional = true
+# strict_optional = true
+# strict_equality = true

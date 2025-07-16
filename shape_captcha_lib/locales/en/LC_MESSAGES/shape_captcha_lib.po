@@ -1,0 +1,86 @@
+# English translations for shape_captcha_lib
+# Copyright (C) 2025 YOUR_NAME_OR_ORGANIZATION
+# This file is distributed under the same license as the shape_captcha_lib package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: shape_captcha_lib 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-20 20:00+0300\n"
+"PO-Revision-Date: 2025-05-20 20:00+0300\n"
+"Last-Translator: Your Name <your.email@example.com>\n"
+"Language-Team: English <en@example.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Please click on a shape of type: %s"
+msgstr "Please click on a shape of type: %s"
+
+# 2D Shapes
+msgid "circle"
+msgstr "circle"
+
+msgid "square"
+msgstr "square"
+
+msgid "rectangle"
+msgstr "rectangle"
+
+msgid "equilateral_triangle"
+msgstr "equilateral triangle"
+
+msgid "pentagon"
+msgstr "pentagon"
+
+msgid "hexagon"
+msgstr "hexagon"
+
+msgid "star5"
+msgstr "5-point star"
+
+msgid "rhombus"
+msgstr "rhombus"
+
+msgid "trapezoid"
+msgstr "trapezoid"
+
+msgid "cross"
+msgstr "cross"
+
+# 3D Shapes
+msgid "sphere"
+msgstr "sphere"
+
+msgid "cube"
+msgstr "cube"
+
+msgid "cylinder"
+msgstr "cylinder"
+
+msgid "cone"
+msgstr "cone"
+
+msgid "pyramid"
+msgstr "pyramid"
+
+msgid "cuboid"
+msgstr "cuboid"
+
+msgid "octahedron"
+msgstr "octahedron"
+
+msgid "torus"
+msgstr "torus"
+
+msgid "cross_3d"
+msgstr "3D cross"
+
+msgid "star5_3d"
+msgstr "3D 5-point star"
+
+msgid "arrow"
+msgstr "arrow"
