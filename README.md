@@ -174,7 +174,7 @@ async def get_captcha_service_dependency(request: Request) -> CaptchaChallengeSe
                  detail="CAPTCHA service not available or not initialized.")
     return service
 ```
-2. Create an API Endpoint to Serve CAPTCHA Challenges:
+## 2. Create an API Endpoint to Serve CAPTCHA Challenges:
 
 In your application, create a router and an endpoint that uses the CaptchaChallengeService.
 
@@ -230,7 +230,7 @@ async def get_new_captcha_challenge_endpoint(
 ```Python
  app.include_router(captcha_api_router, prefix="/api/") // Or your desired API prefix
 ```
-3. Integrate CAPTCHA Verification into a Protected Endpoint (e.g., User Registration):
+## 3. Integrate CAPTCHA Verification into a Protected Endpoint (e.g., User Registration):
 
 Your endpoint's request model (e.g., for registration) will need to include fields for captcha_id and the user's CAPTCHA response data (click coordinates).
 
