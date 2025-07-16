@@ -41,8 +41,8 @@ pip install shape-captcha-lib
 
 ## Configuration
 The library's behavior can be customized by defining the following variables in your application's configuration file (e.g., config.py).
-
-Core Image & Shape Parameters
+```Python
+** Core Image & Shape Parameters
 CAPTCHA_IMAGE_WIDTH
 The final width in pixels of the generated CAPTCHA image. Default: 400.
 
@@ -61,7 +61,7 @@ The minimum size (width or height) in pixels for any shape on the final rendered
 CAPTCHA_TARGET_MAX_FINAL_SHAPE_DIM
 The maximum size (width or height) in pixels for any shape on the final rendered image. Default: 50.
 
-Visual Noise Parameters
+** Visual Noise Parameters
 CAPTCHA_ADD_WATERMARK_TEXT
 A boolean (True/False) to enable or disable drawing text watermarks over the image.
 
@@ -89,17 +89,17 @@ A boolean (True/False) to enable or disable adding point noise (a "salt-and-pepp
 CAPTCHA_POINT_NOISE_DENSITY
 The density of the point noise, as a fraction of total pixels (e.g., 0.02 for 2%).
 
-Localization Settings
+** Localization Settings
 CAPTCHA_DEFAULT_LANGUAGE
 The default language for challenge prompts (e.g., "Click on the square"). Supported values depend on the implemented localization files. Default: 'ru'.
 
-Redis & Challenge Settings
+** Redis & Challenge Settings
 CAPTCHA_REDIS_KEY_PREFIX
 The prefix for all CAPTCHA-related keys stored in Redis. This helps avoid key collisions if you use the same Redis database for other purposes.
 
 CAPTCHA_TTL_SECONDS
 The time-to-live (TTL) in seconds for a CAPTCHA challenge. After this time, the challenge data is automatically deleted from Redis, and it can no longer be solved. Default: 300.
-
+```
 
 
 Quick Start & Usage (FastAPI Example)
